@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.page-outline {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  .audio-box {
+    position: fixed;
+    top: .5rem;
+    right: .5rem;
+    z-index: 99;
+    width: .9rem;
+    height: .9rem;
+    background: url("./image/icon-music.svg") no-repeat;
+    background-size: contain;
+    animation: rotate-infinite 1.2s linear infinite;
+    @keyframes rotate-infinite {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(1turn);
+      }
+    }
+  }
+  .switch-btn {
+    position: fixed;
+    bottom: .8rem;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    text-align: center;
+    .icon-btn {
+      display: inline-block;
+      border-left: .2rem solid transparent;
+      border-right: .2rem solid transparent;
+      border-bottom: .3rem solid #fff;
+      animation-iteration-count: infinite;
+    }
+  }
+  section {
+    position: absolute;
+    z-index: 0;
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: #999 url("./image/wrapper.jpg") no-repeat;
+    background-size: cover;
+    &.z-active {
+      z-index: 2;
+    }
+    &.z-current {
+      display: inline-block;
+      z-index: 1;
+    }
+  }
+}
